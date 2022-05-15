@@ -1,0 +1,3 @@
+com\sde\passwordmanager\MainApp.class
+module-info.class
+com\sde\passwordmanager\controllers\signInController.class
