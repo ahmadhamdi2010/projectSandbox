@@ -4,9 +4,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static java.sql.DriverManager.*;
-
-public class myServer {
+public class myDB {
     static Connection conn;
     public static void ConnectDb() throws SQLException {
         try {
@@ -31,7 +29,7 @@ public class myServer {
                 System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
             }
          catch (ClassNotFoundException ex) {
-            Logger.getLogger(myServer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(myDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
