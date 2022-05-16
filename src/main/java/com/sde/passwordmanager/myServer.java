@@ -1,40 +1,43 @@
 package com.sde.passwordmanager;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static java.sql.DriverManager.*;
 
 public class myServer {
+    static Connection conn;
+    public static void ConnectDb() throws SQLException {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager
+                    .getConnection("jdbc:mysql://145.14.151.101:3306/u230725563_SDE", "u230725563_SDE", "Ahmadhamd2022");
 
-    public static void main(String[] args) {
-
-        // https://docs.oracle.com/javase/8/docs/api/java/sql/package-summary.html#package.description
-        // auto java.sql.Driver discovery -- no longer need to load a java.sql.Driver class via Class.forName
-
-        // register JDBC driver, optional since java 1.6
-        /*try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }*/
-
-        // auto close connection
-        try (Connection conn = getConnection(
-                "jdbc:mysql://145.14.151.101:3306/u230725563_SDE", "u230725563_SDE", "Ahmadhamd2022")) {
-
+            //Making sure DB is connected
             if (conn != null) {
-                System.out.println("Connected to the database!");
-            } else {
-                System.out.println("Failed to make connection!");
-            }
+                System.out.println("Opened database successfully");
+                Statement stmt = null;
+                stmt = conn.createStatement();
 
-        } catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        } catch (Exception e) {
-            e.printStackTrace();
+                String query = "select * from Users";
+                ResultSet rs = stmt.executeQuery(query);
+                while (rs.next()) {
+                    System.out.println(rs.getString("Username"));
+                    System.out.println(rs.getString("Password"));
+                }
+            }
+        }catch (SQLException e) {
+                System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+            }
+         catch (ClassNotFoundException ex) {
+            Logger.getLogger(myServer.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public static void main(String[] args) throws SQLException {
+        ConnectDb();
+
 
     }
 }
