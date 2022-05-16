@@ -35,4 +35,22 @@ public class signInController {
         }
 
     }
+
+    @FXML
+    protected void testClicked() throws IOException {
+        try{
+
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("dashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage signUpStage = (Stage) menuSignUpBtn.getScene().getWindow();
+            signUpStage.setTitle("PswrdManager - dashboard");
+            signUpStage.setScene(scene);
+            signUpStage.show();
+
+        } catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
 }

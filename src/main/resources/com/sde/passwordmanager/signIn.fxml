@@ -74,6 +74,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </VBox>
+            <Button fx:id="testbtn" mnemonicParsing="false" onAction="#textClciked" text="testBtn" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.2959866220735786" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sde.passwordmanager.controllers.dashboardController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #1F3C5F;">
+            <children>
+                <VBox alignment="CENTER" layoutY="233.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="175.0" style="-fx-background-color: #1F3C5F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Circle fill="DODGERBLUE" radius="72.0" stroke="BLACK" strokeType="INSIDE" VBox.vgrow="NEVER">
+                            <VBox.margin>
+                                <Insets bottom="50.0" top="20.0" />
+                            </VBox.margin>
+                        </Circle>
+                        <Button id="manuAdd" fx:id="manuAdd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#menuAddClicked" prefHeight="51.0" prefWidth="183.0" style="-fx-background-color: #152436;" text="Add" textFill="WHITE" />
+                        <Button id="manuManage" fx:id="manuManage" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#manuManageClicked" prefHeight="51.0" prefWidth="183.0" style="-fx-background-color: #1F3C5F;" text="Manage" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </Button>
+                        <Button id="manuSettings" fx:id="manuSettings" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" onAction="#manuSettingsClicked" prefHeight="51.0" prefWidth="183.0" style="-fx-background-color: #1F3C5F;" text="Settings" textFill="WHITE" />
+                    </children>
+                    <padding>
+                        <Insets bottom="50.0" />
+                    </padding>
+                </VBox>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #FFF;">
+            <children>
+                <VBox layoutX="-3.0" prefHeight="398.0" prefWidth="423.0" style="-fx-background-color: #FFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label fx:id="title" prefHeight="80.0" prefWidth="264.0" text="New Password">
+                            <font>
+                                <Font size="34.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="Website Name">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField id="newWebsite" prefHeight="25.0" prefWidth="330.0" style="-fx-background-color: #E5E2E2; -fx-border-radius: 0px;">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <Label text="Password:">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <PasswordField id="newPassword" style="-fx-background-color: E5E2E2;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </PasswordField>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button id="PwGenBtn" fx:id="PwGenBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="88.0" style="-fx-background-color: #C4C4C4;" text="Generate" textAlignment="CENTER" />
+                        <Button id="PwCancelBtn" fx:id="PwCancelBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Cancel" textAlignment="CENTER" />
+                              <Button id="PwAddBtn" fx:id="PwAddBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Add" textAlignment="CENTER" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding></AnchorPane>
+    </items>
+</SplitPane>
