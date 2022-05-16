@@ -1,3 +1,4 @@
+com\sde\passwordmanager\controllers\signUpController.class
 com\sde\passwordmanager\MainApp.class
 module-info.class
 com\sde\passwordmanager\controllers\signInController.class

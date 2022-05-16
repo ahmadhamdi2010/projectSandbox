@@ -12,20 +12,20 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class signInController {
+public class signUpController {
     @FXML
     private Label title;
     @FXML
-    private Button menuSignUpBtn;
+    private Button menuSignInBtn;
 
     @FXML
-    protected void menuSignUpClicked() throws IOException {
+    protected void menuSignInClicked() throws IOException {
         try{
 
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signUp.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signIn.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-            Stage signUpStage = (Stage) menuSignUpBtn.getScene().getWindow();
-            signUpStage.setTitle("PswrdManager - Sign up");
+            Stage signUpStage = (Stage) menuSignInBtn.getScene().getWindow();
+            signUpStage.setTitle("PswrdManager - Sign in");
             signUpStage.setScene(scene);
             signUpStage.show();
 

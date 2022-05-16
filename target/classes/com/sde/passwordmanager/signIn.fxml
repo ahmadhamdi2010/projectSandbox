@@ -22,7 +22,7 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button id="manuSignUp" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#menuSignUpClicked" prefHeight="51.0" prefWidth="183.0" style="-fx-background-color: #1F3C5F;" text="Sign Up" textFill="WHITE">
+                  <Button id="manuSignUp" fx:id="menuSignUpBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#menuSignUpClicked" prefHeight="51.0" prefWidth="183.0" style="-fx-background-color: #1F3C5F;" text="Sign Up" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="80.0" />
                      </VBox.margin>
