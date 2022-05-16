@@ -1,17 +1,12 @@
 package com.sde.passwordmanager.controllers;
 
-import com.dlsc.formsfx.model.structure.PasswordField;
 import com.sde.passwordmanager.MainApp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
-import javafx.stage.StageStyle;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
