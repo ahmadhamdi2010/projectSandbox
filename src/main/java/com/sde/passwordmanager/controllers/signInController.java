@@ -15,7 +15,9 @@ import java.sql.SQLException;
 public class signInController {
 
 
-    @FXML Label title,statuslabel;
+    @FXML Label title;
+
+    @FXML Label errmsg;
 
 
     @FXML
@@ -75,11 +77,11 @@ public class signInController {
             }
 
         }else if(valid == -1){
-            statuslabel.setText("Wrong Password!!");
-            statuslabel.setOpacity(1);
+            errmsg.setText("Wrong Password!!");
+            errmsg.setOpacity(1);
         }else{
-            statuslabel.setText("Enter A Valid Username and Password !");
-            statuslabel.setOpacity(1);
+            errmsg.setText("Enter A Valid Username and Password !");
+            errmsg.setOpacity(1);
         }
 
     }
