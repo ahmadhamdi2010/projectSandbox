@@ -16,8 +16,9 @@ public class signInController {
 
 
     @FXML Label title;
-    @FXML
-    Label errormsg = new Label();
+
+    @FXML Label errmsg;
+
 
     @FXML
     private TextField signingPassword;
@@ -76,14 +77,15 @@ public class signInController {
             }
 
         }else if(valid == -1){
-            errormsg.setText("Wrong Password!!");
-            errormsg.setOpacity(1);
-            }else{
-            errormsg.setText("Enter A Valid Username and Password !");
-            errormsg.setOpacity(1);
-            }
-
+            errmsg.setText("Wrong Password!!");
+            errmsg.setOpacity(1);
+        }else{
+            errmsg.setText("Enter A Valid Username and Password !");
+            errmsg.setOpacity(1);
         }
 
     }
 
+
+
+}
