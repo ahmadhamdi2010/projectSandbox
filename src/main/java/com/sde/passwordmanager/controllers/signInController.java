@@ -55,7 +55,8 @@ public class signInController {
 
         String username = UserNameIn.getText();
         String Password = signingPassword.getText();
-        int valid = myDB.Authinticate(username,Password);
+        System.out.println(username+"\n"+Password);
+        /*int valid = myDB.Authinticate(username,Password);
 
 
         if(valid >0){
@@ -69,14 +70,14 @@ public class signInController {
                 ManageStage.setScene(scene);
                 ManageStage.show();
 
-            } catch (Exception e){
+            }catch (Exception e){
                 e.printStackTrace();
                 e.getCause();
             }
 
         }
 
-
+*/
     }
 
 
