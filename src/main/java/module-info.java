@@ -7,7 +7,8 @@ module com.sde.passwordmanager {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires java.datatransfer;
-   // requires mysql.connector.java;
+    requires mysql.connector.java;
+    // requires mysql.connector.java;
 
     opens com.sde.passwordmanager to javafx.fxml;
     exports com.sde.passwordmanager;

@@ -8,10 +8,10 @@ public class myDB{
     static Connection conn;
     static Statement stmt = null;
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException{
         ConnectDb();
-        //Authinticate("mmmk@gmailcom","12345678");
-        //Authinticate("mmmk@gmail.com","12345678");
+        //Authinticate("mmmk@gmailcom","12345678");         Wrong credentials, should return 0 or -1
+        //Authinticate("mmmk@gmail.com","12345678");        Correct credentials, should return userID>0
 
     }
 
@@ -38,7 +38,7 @@ public class myDB{
             throw new RuntimeException(exception);
         }
     }
-    public static int Authinticate (String username, String password) throws SQLException {
+    public static int Authinticate(String username, String password) throws SQLException {
         int validity = 0;
         String queryUn = "SELECT Username, Password, UserID FROM Users WHERE Username = '" + username + "';";
         try {
@@ -65,4 +65,5 @@ public class myDB{
 
         return validity;
     }
+
 }
