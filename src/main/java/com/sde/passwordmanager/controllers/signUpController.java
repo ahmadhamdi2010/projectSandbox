@@ -13,8 +13,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class signUpController {
-    @FXML
-    private Label title;
+
     @FXML
     private Button menuSignInBtn;
 

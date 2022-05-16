@@ -23,10 +23,10 @@ public class dashboardController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("Add.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-            Stage signUpStage = (Stage) manuAdd.getScene().getWindow();
-            signUpStage.setTitle("PswrdManager - Add");
-            signUpStage.setScene(scene);
-            signUpStage.show();
+            Stage AddStage = (Stage) manuAdd.getScene().getWindow();
+            AddStage.setTitle("PswrdManager - Add");
+            AddStage.setScene(scene);
+            AddStage.show();
 
         } catch (Exception e){
             e.printStackTrace();
@@ -41,10 +41,10 @@ public class dashboardController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("dashboard.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-            Stage signUpStage = (Stage) manuAdd.getScene().getWindow();
-            signUpStage.setTitle("PswrdManager - Dashboard");
-            signUpStage.setScene(scene);
-            signUpStage.show();
+            Stage ManageStage = (Stage) manuAdd.getScene().getWindow();
+            ManageStage.setTitle("PswrdManager - Dashboard");
+            ManageStage.setScene(scene);
+            ManageStage.show();
 
         } catch (Exception e){
             e.printStackTrace();
@@ -58,10 +58,10 @@ public class dashboardController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("settings.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-            Stage signUpStage = (Stage) manuAdd.getScene().getWindow();
-            signUpStage.setTitle("PswrdManager - Settings");
-            signUpStage.setScene(scene);
-            signUpStage.show();
+            Stage SettingsStage = (Stage) manuAdd.getScene().getWindow();
+            SettingsStage.setTitle("PswrdManager - Settings");
+            SettingsStage.setScene(scene);
+            SettingsStage.show();
 
         } catch (Exception e){
             e.printStackTrace();
