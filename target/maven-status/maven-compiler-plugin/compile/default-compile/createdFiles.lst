@@ -1,3 +1,6 @@
 com\sde\passwordmanager\MainApp.class
 com\sde\passwordmanager\controllers\signInController.class
+com\sde\passwordmanager\controllers\dashboardController.class
 module-info.class
+com\sde\passwordmanager\controllers\signUpController.class
+com\sde\passwordmanager\Models\User.class
