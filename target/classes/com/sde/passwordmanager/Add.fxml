@@ -63,14 +63,14 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <PasswordField id="newPassword" style="-fx-background-color: E5E2E2;">
+                        <PasswordField id="newPassword" fx:id="AddPw" style="-fx-background-color: E5E2E2;">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin>
                         </PasswordField>
                   <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Button id="PwGenBtn" fx:id="PwGenBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="88.0" style="-fx-background-color: #C4C4C4;" text="Generate" textAlignment="CENTER" />
+                        <Button id="PwGenBtn" fx:id="PwGenBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddGenBtnClicked" prefHeight="29.0" prefWidth="88.0" style="-fx-background-color: #C4C4C4;" text="Generate" textAlignment="CENTER" />
                         <Button id="PwCancelBtn" fx:id="PwCancelBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Cancel" textAlignment="CENTER" />
                               <Button id="PwAddBtn" fx:id="PwAddBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Add" textAlignment="CENTER" />
                      </children>

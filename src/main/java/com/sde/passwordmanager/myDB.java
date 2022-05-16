@@ -5,27 +5,29 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class myDB{
-    static Connection conn;
-    static Statement stmt = null;
+
+
+
 
     public static void main(String[] args) throws SQLException{
         ConnectDb();
-        //Authinticate("lll@hotmail.com","256488Lk");         //Wrong credentials, should return 0 or -1
+        //Authinticate("lll@htmail.com","25648Lk");         //Wrong credentials, should return 0 or -1
         //Authinticate("mmmk@gmail.com","12345678");        //Correct credentials, should return userID>0
-        stmt.close();
-    }
+     }
 
     //Connect to DB
-    public static void ConnectDb() {
+    public static Connection ConnectDb() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager
+            Statement stmt = null;
+            Connection conn = DriverManager
                     .getConnection("jdbc:mysql://145.14.151.101:3306/u230725563_SDE", "u230725563_SDE", "Ahmadhamd2022");
 
             //Making sure DB is connected
             if (conn != null) {
                 System.out.println("Opened database successfully");
-                stmt = conn.createStatement();
+                //stmt = conn.createStatement();
+                return conn;
 
                /* String query = "select * from Users";
                 ResultSet rs = stmt.executeQuery(query);
@@ -33,17 +35,27 @@ public class myDB{
                     System.out.println(rs.getString("Username"));
                     System.out.println(rs.getString("Password"));
                     */
-                }
-            } catch (ClassNotFoundException | SQLException exception) {
+            }else{
+                System.out.println("Opened database Failed");
+                return null;
+
+            }
+            } catch (SQLException exception) {
             throw new RuntimeException(exception);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
+
     }
 
     public static int Authinticate(String username, String password) throws SQLException {
         int validity = 0;
+        Statement stmt = null;
         String queryUn = "SELECT Username, Password, UserID FROM Users WHERE Username = '" + username + "';";
-        try {
-            try (ResultSet rs = stmt.executeQuery(queryUn)) {
+        stmt = ConnectDb().createStatement();
+
+
+        ResultSet rs = stmt.executeQuery(queryUn);
 
                 while (rs.next()) {
                     System.out.println(rs.getString("Username"));
@@ -56,11 +68,8 @@ public class myDB{
                     }
                    // System.out.println(rs.getString("Password"));
                 }
-            }
+        System.out.println(validity);
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         return validity;
     }
 
