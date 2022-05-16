@@ -5,71 +5,62 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class myDB{
-
-
-
+    private Connection conn;
+    public myDB() {
+        this.conn = null;
+    }
 
     public static void main(String[] args) throws SQLException{
-        ConnectDb();
-        //Authinticate("lll@htmail.com","25648Lk");         //Wrong credentials, should return 0 or -1
-        //Authinticate("mmmk@gmail.com","12345678");        //Correct credentials, should return userID>0
-     }
+        //myDB.ConnectDb();
+        //Authinticate("lll@hotmail.com","256488Lk");         //Wrong credentials, should return 0 or -1
+       // Authinticate("mmmk@gmail.com","12345678");        //Correct credentials, should return userID>0
+        //stmt.close();
+    }
 
     //Connect to DB
-    public static Connection ConnectDb() {
+    public void ConnectDb() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Statement stmt = null;
-            Connection conn = DriverManager
-                    .getConnection("jdbc:mysql://145.14.151.101:3306/u230725563_SDE", "u230725563_SDE", "Ahmadhamd2022");
-
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        conn = DriverManager.getConnection("jdbc:mysql://145.14.151.101:3306/u230725563_SDE", "u230725563_SDE", "Ahmadhamd2022");
             //Making sure DB is connected
-            if (conn != null) {
                 System.out.println("Opened database successfully");
-                //stmt = conn.createStatement();
-                return conn;
+                Statement stmt = conn.createStatement();
 
-               /* String query = "select * from Users";
+               /*String query = "select * from Users";
                 ResultSet rs = stmt.executeQuery(query);
                 while (rs.next()) {
                     System.out.println(rs.getString("Username"));
                     System.out.println(rs.getString("Password"));
-                    */
-            }else{
-                System.out.println("Opened database Failed");
-                return null;
 
-            }
-            } catch (SQLException exception) {
-            throw new RuntimeException(exception);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+                }*/
+
 
     }
 
-    public static int Authinticate(String username, String password) throws SQLException {
+    public int Authinticate(String username, String password) throws SQLException {
         int validity = 0;
+        String queryUn = "SELECT Username, Password, UserID FROM Users\nWHERE Username = '" + username + "';";
+        conn.setAutoCommit(false);
         Statement stmt = null;
-        String queryUn = "SELECT Username, Password, UserID FROM Users WHERE Username = '" + username + "';";
-        stmt = ConnectDb().createStatement();
-
-
-        ResultSet rs = stmt.executeQuery(queryUn);
-
-                while (rs.next()) {
-                    System.out.println(rs.getString("Username"));
-                    if (rs.getString("Password").equals(password)) {
-                        //validity is userID for correct credentials
-                        validity = rs.getInt("UserID");
-                    } else {
-                        //Wrong Password
-                        validity = -1;
-                    }
-                   // System.out.println(rs.getString("Password"));
+        stmt = conn.createStatement();
+        try (ResultSet rs = stmt.executeQuery(queryUn)) {
+            while (rs.next()) {
+                System.out.println(rs.getString("Username"));
+                if (rs.getString("Password").equals(password)) {
+                    //validity is userID for correct credentials
+                    validity = rs.getInt("UserID");
+                } else {
+                    //Wrong Password
+                    validity = -1;
                 }
+            }
+        }catch (SQLException E){
+            throw new RuntimeException(E);
+        }
         System.out.println(validity);
-
         return validity;
     }
 

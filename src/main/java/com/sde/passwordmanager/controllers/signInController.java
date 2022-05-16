@@ -51,12 +51,15 @@ public class signInController {
 
     @FXML
     protected void SubmitClicked() throws SQLException {
-        int  valid;
+
         String username = UserNameIn.getCharacters().toString();
-        String Password = signingPassword.getText().toString();
+        String Password = signingPassword.getText() ;
         System.out.println(username+"\n"+Password);
-        valid = myDB.Authinticate(username,Password);
+        myDB mydb = new myDB();
+        mydb.ConnectDb();
+        int valid = mydb.Authinticate(username, Password);
         System.out.println(valid);
+/*
 
         if(valid >0){
 
@@ -76,7 +79,7 @@ public class signInController {
 
         }
 
-
+*/
     }
 
 
