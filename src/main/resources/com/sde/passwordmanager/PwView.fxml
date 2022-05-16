@@ -42,6 +42,33 @@
                                 <Insets bottom="20.0" />
                             </VBox.margin>
                         </Label>
+                        <Label text="Password:">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <PasswordField id="newPassword" fx:id="PWRecord" style="-fx-background-color: E5E2E2;" text="ddd">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </PasswordField>
+                        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                            <children>
+                                <Button id="PwGenBtn" fx:id="PWDelete" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddGenBtnClicked" prefHeight="29.0" prefWidth="88.0" style="-fx-background-color: #C4C4C4;" text="Delete" textAlignment="CENTER" />
+                                <Button id="PwCancelBtn" fx:id="PWView" alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" onAction="#PWViewClicked" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="View" textAlignment="CENTER" />
+                                <Button id="PwAddBtn" fx:id="PWEdit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Edit" textAlignment="CENTER" />
+                            </children>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </HBox>
+
                     </children>
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
