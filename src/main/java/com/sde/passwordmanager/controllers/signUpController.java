@@ -20,7 +20,7 @@ public class signUpController {
     @FXML
     protected void menuSignInClicked() throws IOException {
         try{
-
+//888
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signIn.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
             Stage signUpStage = (Stage) menuSignInBtn.getScene().getWindow();
