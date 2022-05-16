@@ -6,6 +6,13 @@ import java.util.logging.Logger;
 
 public class myDB {
     static Connection conn;
+
+    public static void main(String[] args) throws SQLException {
+        ConnectDb();
+
+    }
+
+    //Connect to DB
     public static void ConnectDb() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -26,16 +33,17 @@ public class myDB {
                 }
             }
         }catch (SQLException e) {
-                System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-            }
-         catch (ClassNotFoundException ex) {
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        }
+        catch (ClassNotFoundException ex) {
             Logger.getLogger(myDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public static void main(String[] args) throws SQLException {
-        ConnectDb();
+    public static boolean Authinticate(String username, String password){
 
-
+        return true;
     }
+
+
 }
