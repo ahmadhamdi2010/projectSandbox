@@ -2,6 +2,7 @@ package com.sde.passwordmanager.controllers;
 
 import com.dlsc.formsfx.model.structure.PasswordField;
 import com.sde.passwordmanager.MainApp;
+import com.sde.passwordmanager.myDB;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +15,7 @@ import javafx.stage.StageStyle;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class signInController {
 
@@ -26,7 +28,12 @@ public class signInController {
     private TextField signingPassword;
 
     @FXML
-    protected void menuSignUpClicked() throws IOException {
+    private TextField UserNameIn;
+
+
+
+    @FXML
+    protected void menuSignUpClicked(){
         try{
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signUp.fxml"));
@@ -44,12 +51,14 @@ public class signInController {
     }
 
     @FXML
-    protected void SubmitClicked() throws IOException {
+    protected void SubmitClicked() throws SQLException {
 
-        String username = "ahmadhamdi";
-        String Password = "password";
+        String username = UserNameIn.getText();
+        String Password = signingPassword.getText();
+        int valid = myDB.Authinticate(username,Password);
 
-        if(UserNamein.getText().equals(username) && signingPassword.getText().equals(Password)){
+
+        if(valid >0){
 
             try{
 
