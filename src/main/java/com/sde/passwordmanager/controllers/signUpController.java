@@ -21,7 +21,6 @@ public class signUpController {
     @FXML
     private Button menuSignInBtn;
 
-
     @FXML
     protected void menuSignInClicked() throws IOException {
         try{
