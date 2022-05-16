@@ -22,8 +22,7 @@ public class signInController {
 
     @FXML Label title;
 
-    @FXML
-    private TextField UserNamein;
+
     @FXML
     private TextField signingPassword;
 
@@ -53,11 +52,14 @@ public class signInController {
     @FXML
     protected void SubmitClicked() throws SQLException {
 
-        String username = UserNameIn.getText();
-        String Password = signingPassword.getText();
-        System.out.println(username+"\n"+Password);
-        /*int valid = myDB.Authinticate(username,Password);
-
+        String username = UserNameIn.getCharacters().toString();
+        String Password = signingPassword.getText() ;
+        //System.out.println(username+"\n"+Password);
+        myDB mydb = new myDB();
+        mydb.ConnectDb();
+        int valid = mydb.Authinticate(username, Password);
+      //  System.out.println(valid);
+/*
 
         if(valid >0){
 

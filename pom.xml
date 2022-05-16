@@ -58,6 +58,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.mycompany.nokiamovietask</groupId>
+            <artifactId>NokiaMovieTask</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
