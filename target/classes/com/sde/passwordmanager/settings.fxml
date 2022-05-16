@@ -50,7 +50,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <TextField id="newWebsite" prefHeight="25.0" prefWidth="330.0" style="-fx-background-color: #E5E2E2; -fx-border-radius: 0px;">
+                        <TextField id="newWebsite" fx:id="NowUsername" prefHeight="25.0" prefWidth="330.0" style="-fx-background-color: #E5E2E2; -fx-border-radius: 0px;">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
                             </VBox.margin>
@@ -63,7 +63,7 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField id="newPassword" fx:id="settingsPw" style="-fx-background-color: E5E2E2;">
+                        <TextField id="newPassword" fx:id="NowPassword" style="-fx-background-color: E5E2E2;">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin>
@@ -76,7 +76,7 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField id="NewPin" style="-fx-background-color: E5E2E2;">
+                        <TextField id="NewPin" fx:id="NowPin" style="-fx-background-color: E5E2E2;">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin>

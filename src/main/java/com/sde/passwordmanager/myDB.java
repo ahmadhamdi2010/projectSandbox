@@ -10,12 +10,12 @@ public class myDB{
         this.conn = null;
     }
 
-    /*public static void main(String[] args) throws SQLException{
-        //myDB.ConnectDb();
+    public static void main(String[] args) throws SQLException{
+        //mydb.ConnectDb();
         //Authinticate("lll@hotmail.com","256488Lk");         //Wrong credentials, should return 0 or -1
        // Authinticate("mmmk@gmail.com","12345678");        //Correct credentials, should return userID>0
         //stmt.close();
-    }*/
+    }
 
     //Connect to DB
     public void ConnectDb() throws SQLException {
@@ -58,5 +58,13 @@ public class myDB{
             throw new RuntimeException(E);
         }
         return validity;
+    }
+
+    public boolean Register(String username, String password, String pin) throws  SQLException{
+        String query = "INSERT INTO u230725563_SDE.Users(Username, Password, pin) " +
+                "VALUES ('" + username + "', '" + password + "', '" + pin + "');";
+        Statement stmt = conn.createStatement();
+        boolean registeringState = stmt.execute(query);
+        return registeringState;
     }
 }
