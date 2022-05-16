@@ -54,11 +54,11 @@ public class signInController {
 
         String username = UserNameIn.getCharacters().toString();
         String Password = signingPassword.getText() ;
-        System.out.println(username+"\n"+Password);
+        //System.out.println(username+"\n"+Password);
         myDB mydb = new myDB();
         mydb.ConnectDb();
         int valid = mydb.Authinticate(username, Password);
-        System.out.println(valid);
+      //  System.out.println(valid);
 /*
 
         if(valid >0){

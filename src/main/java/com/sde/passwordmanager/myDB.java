@@ -10,12 +10,12 @@ public class myDB{
         this.conn = null;
     }
 
-    public static void main(String[] args) throws SQLException{
+    /*public static void main(String[] args) throws SQLException{
         //myDB.ConnectDb();
         //Authinticate("lll@hotmail.com","256488Lk");         //Wrong credentials, should return 0 or -1
        // Authinticate("mmmk@gmail.com","12345678");        //Correct credentials, should return userID>0
         //stmt.close();
-    }
+    }*/
 
     //Connect to DB
     public void ConnectDb() throws SQLException {
@@ -26,18 +26,15 @@ public class myDB{
         }
         conn = DriverManager.getConnection("jdbc:mysql://145.14.151.101:3306/u230725563_SDE", "u230725563_SDE", "Ahmadhamd2022");
             //Making sure DB is connected
-                System.out.println("Opened database successfully");
-                Statement stmt = conn.createStatement();
+                //System.out.println("Opened database successfully");
+               // Statement stmt = conn.createStatement();
 
                /*String query = "select * from Users";
                 ResultSet rs = stmt.executeQuery(query);
                 while (rs.next()) {
                     System.out.println(rs.getString("Username"));
                     System.out.println(rs.getString("Password"));
-
                 }*/
-
-
     }
 
     public int Authinticate(String username, String password) throws SQLException {
@@ -48,7 +45,7 @@ public class myDB{
         stmt = conn.createStatement();
         try (ResultSet rs = stmt.executeQuery(queryUn)) {
             while (rs.next()) {
-                System.out.println(rs.getString("Username"));
+                //System.out.println(rs.getString("Username"));
                 if (rs.getString("Password").equals(password)) {
                     //validity is userID for correct credentials
                     validity = rs.getInt("UserID");
@@ -60,8 +57,6 @@ public class myDB{
         }catch (SQLException E){
             throw new RuntimeException(E);
         }
-        System.out.println(validity);
         return validity;
     }
-
 }
