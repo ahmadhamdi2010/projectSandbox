@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -21,6 +22,9 @@ public class dashboardController {
     PasswordField PWRecord;
     @FXML
     TextField NowPassword;
+
+    @FXML
+    ListView<Password> PasswordList;
 
     @FXML
     TextField AddPw;
@@ -87,6 +91,7 @@ public class dashboardController {
 
     @FXML
     protected void testClicked() throws IOException {
+
         try{
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("PwView.fxml"));

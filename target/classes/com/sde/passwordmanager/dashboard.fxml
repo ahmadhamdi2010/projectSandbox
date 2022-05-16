@@ -42,7 +42,7 @@
                                 <Insets bottom="20.0" />
                             </VBox.margin>
                         </Label>
-                  <ListView prefHeight="246.0" prefWidth="358.0" />
+                  <ListView fx:id="PasswordList" prefHeight="246.0" prefWidth="358.0" />
                   <Button fx:id="test" mnemonicParsing="false" onAction="#testClicked" text="test" />
                     </children>
                     <padding>

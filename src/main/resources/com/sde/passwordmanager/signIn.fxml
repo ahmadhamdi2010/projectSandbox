@@ -68,7 +68,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label fx:id="statuslabel" style="-fx-opacity: 0;" text="status" textFill="#ff2929" />
+                  <Label fx:id="errormsg" style="-fx-opacity: 0;" text="status" textFill="#ff2929" />
                   <Button id="signinBtn" fx:id="Submit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#SubmitClicked" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Sign In " textAlignment="JUSTIFY" />
                </children>
                <padding>

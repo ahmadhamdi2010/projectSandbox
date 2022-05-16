@@ -17,7 +17,7 @@ public class signInController {
 
     @FXML Label title;
     @FXML
-    Label errormsg = new Label();
+    Label errormsg;
 
     @FXML
     private TextField signingPassword;
