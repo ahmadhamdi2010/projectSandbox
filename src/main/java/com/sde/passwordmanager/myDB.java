@@ -4,16 +4,19 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class myDB {
+public class myDB{
     static Connection conn;
+    static Statement stmt = null;
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException{
         ConnectDb();
-
+        //Authinticate("lll@hotmail.com","256488Lk");         //Wrong credentials, should return 0 or -1
+        //Authinticate("mmmk@gmail.com","12345678");        //Correct credentials, should return userID>0
+        stmt.close();
     }
 
     //Connect to DB
-    public static void ConnectDb() throws SQLException {
+    public static void ConnectDb() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager
@@ -22,28 +25,43 @@ public class myDB {
             //Making sure DB is connected
             if (conn != null) {
                 System.out.println("Opened database successfully");
-                Statement stmt = null;
                 stmt = conn.createStatement();
 
-                String query = "select * from Users";
+               /* String query = "select * from Users";
                 ResultSet rs = stmt.executeQuery(query);
                 while (rs.next()) {
                     System.out.println(rs.getString("Username"));
                     System.out.println(rs.getString("Password"));
+                    */
+                }
+            } catch (ClassNotFoundException | SQLException exception) {
+            throw new RuntimeException(exception);
+        }
+    }
+
+    public static int Authinticate(String username, String password) throws SQLException {
+        int validity = 0;
+        String queryUn = "SELECT Username, Password, UserID FROM Users WHERE Username = '" + username + "';";
+        try {
+            try (ResultSet rs = stmt.executeQuery(queryUn)) {
+
+                while (rs.next()) {
+                    System.out.println(rs.getString("Username"));
+                    if (rs.getString("Password").equals(password)) {
+                        //validity is userID for correct credentials
+                        validity = rs.getInt("UserID");
+                    } else {
+                        //Wrong Password
+                        validity = -1;
+                    }
+                   // System.out.println(rs.getString("Password"));
                 }
             }
-        }catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-        catch (ClassNotFoundException ex) {
-            Logger.getLogger(myDB.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        return validity;
     }
-
-    public static boolean Authinticate(String username, String password){
-
-        return true;
-    }
-
 
 }

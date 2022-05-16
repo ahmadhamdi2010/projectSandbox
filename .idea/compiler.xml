@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="PassWordManager" options="--add-exports java.datatransfer/java.awt=com.sde.passwordmanager" />
+      <module name="PassWordManager" options="" />
     </option>
   </component>
 </project>
