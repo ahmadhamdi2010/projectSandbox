@@ -103,7 +103,7 @@ public class dashboardController {
     protected void PWViewClicked(ActionEvent event){
         Password pswrd = new Password();
         PWRecord.setText(PWRecord.getText());
-        System.out.println(PWRecord.getText());
+        //System.out.println(PWRecord.getText());
 
     }
 
