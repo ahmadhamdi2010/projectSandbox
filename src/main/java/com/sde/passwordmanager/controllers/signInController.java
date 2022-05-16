@@ -1,18 +1,13 @@
 package com.sde.passwordmanager.controllers;
 
-import com.dlsc.formsfx.model.structure.PasswordField;
 import com.sde.passwordmanager.MainApp;
 import com.sde.passwordmanager.myDB;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
-import javafx.stage.StageStyle;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -20,7 +15,7 @@ import java.sql.SQLException;
 public class signInController {
 
 
-    @FXML Label title;
+    @FXML Label title,statuslabel;
 
 
     @FXML
@@ -28,6 +23,8 @@ public class signInController {
 
     @FXML
     private TextField UserNameIn;
+
+
 
 
 
@@ -58,29 +55,35 @@ public class signInController {
         myDB mydb = new myDB();
         mydb.ConnectDb();
         int valid = mydb.Authinticate(username, Password);
-      //  System.out.println(valid);
-/*
+        System.out.println(valid);
+
 
         if(valid >0){
 
-            try{
+            try {
 
                 FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("dashboard.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 800, 600);
                 Stage ManageStage = (Stage) title.getScene().getWindow();
-                ManageStage.setTitle("PswrdManager - Dashboard");
+                ManageStage.setTitle("PswrdManager - Dashboard User : " + valid );
                 ManageStage.setScene(scene);
                 ManageStage.show();
 
-            }catch (Exception e){
+            } catch (IOException e) {
                 e.printStackTrace();
                 e.getCause();
             }
 
+        }else if(valid == -1){
+            statuslabel.setText("Wrong Password!!");
+            statuslabel.setOpacity(1);
+        }else{
+            statuslabel.setText("Enter A Valid Username and Password !");
+            statuslabel.setOpacity(1);
         }
 
-*/
     }
+
 
 
 }

@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainApp extends Application {
+    int CurrentUserID = -1;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signIn.fxml"));
@@ -16,6 +17,10 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    public int getCurrentUserID(){
+        return CurrentUserID;
     }
 
     public static void main(String[] args) {

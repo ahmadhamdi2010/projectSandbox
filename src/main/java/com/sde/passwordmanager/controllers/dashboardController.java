@@ -2,6 +2,7 @@ package com.sde.passwordmanager.controllers;
 
 import com.sde.passwordmanager.MainApp;
 import com.sde.passwordmanager.Models.Password;
+import com.sde.passwordmanager.Models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +15,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class dashboardController {
+    public User currentUser = new User();
 
     @FXML
     PasswordField PWRecord;
     @FXML
-    TextField settingsPw;
+    TextField NowPassword;
 
     @FXML
     TextField AddPw;
@@ -28,6 +30,8 @@ public class dashboardController {
 
     @FXML
     protected void menuAddClicked() throws IOException {
+
+
         try{
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("Add.fxml"));
@@ -119,7 +123,7 @@ public class dashboardController {
         Password pswrd = new Password();
         System.out.println(pswrd.generateRandomPassword(8));
 
-        settingsPw.setText(pswrd.generateRandomPassword(8));
+        NowPassword.setText(pswrd.generateRandomPassword(8));
 
     }
 
