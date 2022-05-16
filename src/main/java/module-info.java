@@ -6,6 +6,7 @@ module com.sde.passwordmanager {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires java.datatransfer;
 
     opens com.sde.passwordmanager to javafx.fxml;
     exports com.sde.passwordmanager;

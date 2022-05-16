@@ -34,7 +34,7 @@
             <children>
                 <VBox layoutX="-3.0" prefHeight="398.0" prefWidth="423.0" style="-fx-background-color: #FFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <Label fx:id="title" prefHeight="80.0" prefWidth="264.0" text="New Password">
+                        <Label fx:id="title" prefHeight="80.0" prefWidth="264.0" text="Settings">
                             <font>
                                 <Font size="34.0" />
                             </font>
@@ -42,7 +42,7 @@
                                 <Insets bottom="20.0" />
                             </VBox.margin>
                         </Label>
-                        <Label text="Website Name">
+                        <Label text="Username">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
                             </VBox.margin>
@@ -55,7 +55,7 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </TextField>
-                        <Label text="Password:">
+                        <Label prefHeight="25.0" prefWidth="118.0" text="Password">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -63,13 +63,27 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <PasswordField id="newPassword" style="-fx-background-color: E5E2E2;">
+                        <TextField id="newPassword" style="-fx-background-color: E5E2E2;">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin>
-                        </PasswordField>
+                        </TextField>
+                        <Label prefHeight="25.0" prefWidth="118.0" text="PIN">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <TextField id="NewPin" style="-fx-background-color: E5E2E2;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </TextField>
                         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                             <children>
+                        <Button id="ExitBtn" fx:id="ExitBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="10.0" mnemonicParsing="false" onAction="#ExitBtnClicked" prefHeight="29.0" prefWidth="88.0" style="-fx-background-color: #ff4569;" text="Exit" textAlignment="CENTER" />
                                 <Button id="PwGenBtn" fx:id="PwGenBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="88.0" style="-fx-background-color: #C4C4C4;" text="Generate" textAlignment="CENTER" />
                                 <Button id="PwCancelBtn" fx:id="PwCancelBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Cancel" textAlignment="CENTER" />
                                 <Button id="PwAddBtn" fx:id="PwAddBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Add" textAlignment="CENTER" />

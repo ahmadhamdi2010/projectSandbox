@@ -11,18 +11,19 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
 public class signInController {
 
-    @FXML
-    private Button menuSignUpBtn;
+
+    @FXML Label title;
 
     @FXML
     private TextField UserNamein;
     @FXML
-    private PasswordField Passwordin;
+    private TextField signingPassword;
 
     @FXML
     protected void menuSignUpClicked() throws IOException {
@@ -30,7 +31,7 @@ public class signInController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signUp.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-            Stage signUpStage = (Stage) menuSignUpBtn.getScene().getWindow();
+            Stage signUpStage = (Stage) title.getScene().getWindow();
             signUpStage.setTitle("PswrdManager - Sign up");
             signUpStage.setScene(scene);
             signUpStage.show();
@@ -43,21 +44,21 @@ public class signInController {
     }
 
     @FXML
-    protected void SubmitClciked() throws IOException {
+    protected void SubmitClicked() throws IOException {
 
         String username = "ahmadhamdi";
         String Password = "password";
 
-        if(UserNamein.getText().equals(username) && Passwordin.toString().equals(Password)){
+        if(UserNamein.getText().equals(username) && signingPassword.getText().equals(Password)){
 
             try{
 
                 FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("dashboard.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-                Stage signUpStage = (Stage) menuSignUpBtn.getScene().getWindow();
-                signUpStage.setTitle("PswrdManager - dashboard");
-                signUpStage.setScene(scene);
-                signUpStage.show();
+                Stage ManageStage = (Stage) title.getScene().getWindow();
+                ManageStage.setTitle("PswrdManager - Dashboard");
+                ManageStage.setScene(scene);
+                ManageStage.show();
 
             } catch (Exception e){
                 e.printStackTrace();
@@ -69,21 +70,5 @@ public class signInController {
 
     }
 
-    @FXML
-    protected void testClicked() throws IOException {
-        try{
 
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("dashboard.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-            Stage signUpStage = (Stage) menuSignUpBtn.getScene().getWindow();
-            signUpStage.setTitle("PswrdManager - dashboard");
-            signUpStage.setScene(scene);
-            signUpStage.show();
-
-        } catch (Exception e){
-            e.printStackTrace();
-            e.getCause();
-        }
-
-    }
 }

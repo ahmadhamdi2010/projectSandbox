@@ -63,18 +63,17 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Label>
-                  <PasswordField id="signinPassword" fx:id="Passwordin" style="-fx-background-color: E5E2E2;">
+                  <TextField fx:id="signingPassword" style="-fx-background-color: E5E2E2;">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
-                  </PasswordField>
-                  <Button id="signinBtn" fx:id="Submit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#SubmitClciked" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Sign In " textAlignment="JUSTIFY" />
+                  </TextField>
+                  <Button id="signinBtn" fx:id="Submit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#SubmitClicked" onMouseClicked="#SubmitClicked" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #C4C4C4;" text="Sign In " textAlignment="JUSTIFY" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </VBox>
-            <Button fx:id="testbtn" mnemonicParsing="false" onAction="#testClicked" text="testBtn" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

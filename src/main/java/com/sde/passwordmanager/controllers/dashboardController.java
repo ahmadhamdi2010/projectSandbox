@@ -52,6 +52,25 @@ public class dashboardController {
         }
 
     }
+
+
+    @FXML
+    protected void ExitBtnClicked() throws IOException {
+        try{
+
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signIn.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage exitStage = (Stage) manuAdd.getScene().getWindow();
+            exitStage.setTitle("PswrdManager - Settings");
+            exitStage.setScene(scene);
+            exitStage.show();
+
+        } catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
     @FXML
     protected void manuSettingsClicked() throws IOException {
         try{
