@@ -34,7 +34,7 @@
             <children>
                 <VBox layoutX="-3.0" prefHeight="398.0" prefWidth="423.0" style="-fx-background-color: #FFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <Label fx:id="websiteName" prefHeight="80.0" prefWidth="185.0" text="Website ">
+                        <Label fx:id="websiteName" prefHeight="80.0" prefWidth="185.0" >
                             <font>
                                 <Font size="34.0" />
                             </font>
@@ -42,6 +42,19 @@
                                 <Insets bottom="20.0" />
                             </VBox.margin>
                         </Label>
+                        <Label text="Email: ">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="PwEmail" prefHeight="25.0" prefWidth="330.0" style="-fx-background-color: #E5E2E2; -fx-border-radius: 0px;">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </TextField>
                         <Label text="Password:">
                             <font>
                                 <Font size="16.0" />
@@ -50,11 +63,11 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <PasswordField id="newPassword" fx:id="PWRecord" style="-fx-background-color: E5E2E2;" text="ddd">
+                        <TextField id="PwPw" fx:id="PwPw" style="-fx-background-color: E5E2E2;" >
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin>
-                        </PasswordField>
+                        </TextField>
                         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                             <children>
                                 <Button id="PwGenBtn" fx:id="PWDelete" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddGenBtnClicked" prefHeight="29.0" prefWidth="88.0" style="-fx-background-color: #C4C4C4;" text="Delete" textAlignment="CENTER" />

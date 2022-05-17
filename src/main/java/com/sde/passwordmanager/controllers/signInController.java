@@ -1,9 +1,11 @@
 package com.sde.passwordmanager.controllers;
 
 import com.sde.passwordmanager.MainApp;
+import com.sde.passwordmanager.Models.User;
 import com.sde.passwordmanager.myDB;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -14,6 +16,7 @@ import java.sql.SQLException;
 
 public class signInController {
 
+    public User currentUser = new User();
 
     @FXML Label title;
     @FXML
@@ -64,11 +67,17 @@ public class signInController {
             try {
 
                 FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("dashboard.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+                Scene scene = new Scene(fxmlLoader.<Parent>load(), 800, 600);
                 Stage ManageStage = (Stage) title.getScene().getWindow();
+
+                User currentUser = User.get();
+                currentUser.setId(valid);
+                currentUser.setPassword(Password);
+                currentUser.setUsername(username);
                 ManageStage.setTitle("PswrdManager - Dashboard User : " + valid );
                 ManageStage.setScene(scene);
                 ManageStage.show();
+
 
             } catch (IOException e) {
                 e.printStackTrace();

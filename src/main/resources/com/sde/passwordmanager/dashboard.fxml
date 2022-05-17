@@ -34,7 +34,7 @@
             <children>
                 <VBox layoutX="-3.0" prefHeight="398.0" prefWidth="423.0" style="-fx-background-color: #FFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <Label fx:id="title" prefHeight="80.0" prefWidth="185.0" text="Dashboard">
+                        <Label fx:id="titlenow" prefHeight="80.0" prefWidth="185.0" text="Dashboard">
                             <font>
                                 <Font size="34.0" />
                             </font>
@@ -42,8 +42,8 @@
                                 <Insets bottom="20.0" />
                             </VBox.margin>
                         </Label>
-                  <ListView fx:id="PasswordList" prefHeight="246.0" prefWidth="358.0" />
-                  <Button fx:id="test" mnemonicParsing="false" onAction="#testClicked" text="test" />
+                  <ListView fx:id="PasswordList" onEditStart="#PwItemClicked" prefHeight="246.0" prefWidth="358.0" />
+                  <Button fx:id="test" mnemonicParsing="false" onAction="#getlistdata" text="Get My password" />
                     </children>
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
