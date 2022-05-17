@@ -67,4 +67,16 @@ public class myDB{
         boolean registeringState = stmt.execute(query);
         return registeringState;
     }
+    public void update(String userName, String password, String pin){
+        String query = String.format("UPDATE u230725563_SDE.Users SET password = %s, pin = %d WHERE userName = %s", password, pin, userName);
+        try {
+            conn.setAutoCommit(false);
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(query);
+            conn.commit();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

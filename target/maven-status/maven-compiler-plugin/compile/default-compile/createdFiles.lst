@@ -1,3 +1,4 @@
+com\sde\passwordmanager\controllers\settingsComtroller.class
 module-info.class
 com\sde\passwordmanager\controllers\signUpController.class
 com\sde\passwordmanager\Models\User.class
